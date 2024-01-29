@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | FAQ accordion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    #item-1, #item-2, #item-3, #item-4 {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s;
+    }
+    #icon-minus {
+      display: none;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            white: "hsl(0, 0%, 100%)",
+            "light-pink": "hsl(275, 100%, 97%)",
+            "grayish-purple": "hsl(292, 16%, 49%)",
+            "dark-purple": "hsl(292, 42%, 14%)"
+          },
+          fontFamily: {
+            "work-sans": ['Work Sans', 'sans-serif']
+          },
+          backgroundImage: {
+            "pattern-desktop": "url('./assets/images/background-pattern-desktop.svg')",
+            "pattern-mobile": "url('./assets/images/background-pattern-mobile.svg')" 
+          }
+        }
+      }
+    }
+  </script>
+  <script src="./main.js"></script>
+</head>
+<body class="md:bg-pattern-desktop bg-pattern-mobile bg-no-repeat bg-cover bg-light-pink flex items-center justify-center h-full">
+  <main class="max-w-[575px] md:text-base text-sm bg-white md:mx-auto mx-4 absolute top-1/2 -translate-y-1/2 md:p-6 p-4 rounded-xl">
+    <div class="flex items-center pb-4">
+      <img class="w-8 md:w-12" alt="icon-star" src="./assets/images/icon-star.svg"/>
+      <h1 class="font-bold text-4xl px-4">FAQs</h1>
+    </div>
+    <ul>
+      <li>
+        <div onclick="toggleAnswer('item-1', 'btn-1')" class="flex justify-between">
+          <button id="btn-1" class="text-left font-bold py-4 transition">What is Frontend Mentor, and how will it help me?</button>
+          <img class="w-6" alt="icon-plus" src="./assets/images/icon-plus.svg"/>
+          <img class="hidden w-6" alt="icon-minus" src="./assets/images/icon-minus.svg"/>
+        </div>
+        <p id="item-1"> Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.</p>
+      </li>
+      <li>
+        <div onclick="toggleAnswer('item-2', 'btn-2')" class="flex justify-between">
+          <button id="btn-2" class="text-left font-bold py-4">Is Frontend Mentor free?</button>
+          <img class="w-6" alt="icon-plus" src="./assets/images/icon-plus.svg"/>
+          <img class="hidden w-6" alt="icon-minus" src="./assets/images/icon-minus.svg"/>
+        </div>
+        <p id="item-2">Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.</p>
+      </li>
+      <li>
+        <div onclick="toggleAnswer('item-3', 'btn-3')" class="flex justify-between">
+          <button id="btn-3" class="text-left font-bold py-4">Can I use Frontend Mentor projects in my portfolio?</button>
+          <img class="w-6" alt="icon-plus" src="./assets/images/icon-plus.svg"/>
+          <img class="hidden w-6" alt="icon-minus" src="./assets/images/icon-minus.svg"/>
+        </div>
+        <p id="item-3">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!</p>
+      </li>
+      <li>
+        <div onclick="toggleAnswer('item-4', 'btn-4')" class="flex justify-between w-full">
+          <button id="btn-4" class="text-left font-bold py-4">How can I get help if I'm stuck on a Frontend Mentor challenge?</button>
+          <img class="w-6" alt="icon-plus" src="./assets/images/icon-plus.svg"/>
+          <img class="hidden w-6" alt="icon-minus" src="./assets/images/icon-minus.svg"/>
+        </div>
+        <p id="item-4">The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.</p>
+      </li>
+    </ul>
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </main>
+</body>
+</html>
